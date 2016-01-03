@@ -10,7 +10,7 @@ namespace Depression
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, this program will help you complete the PHQ-9 Depresion Questionnaire.\n\n"
+            Console.WriteLine("Hello, this program will help you complete the PHQ-9 depresion questionnaire.\n\n"
                 + "Use the following responses to answer ALL 9 questions:\n"
                 + "0 = Not at all, 1 = Several days, 2 = More than half the days, 3 = Nearly every day.\n\n"
                 + "Over the past 2 weeks, how often have you been bothered by the following problems:\n");
@@ -29,8 +29,36 @@ namespace Depression
             int Item9 = GetValue("Thoughts that you would be better off dead or of hurting\n"
                 + "yourself in some way? ");
 
-            int totalScore = (Item1 + Item2 + Item3 + Item4 + Item5 + Item6 + Item7 + Item8 + Item9);
             Console.ForegroundColor = System.ConsoleColor.Red;
+
+            int mddCount = 0;
+
+            if (Item1 + Item2 >= 3)
+            {
+                int[] mddArray = { Item1, Item2, Item3, Item4, Item5, Item6, Item7, Item8};
+                foreach (var item in mddArray)
+                {
+                    if (item >= 2)
+                    {
+                        mddCount++;
+                    }
+                }
+                if (Item9 > 0)
+                {
+                    mddCount++;
+                }
+            }
+
+            if (mddCount >= 5)
+            {
+                Console.WriteLine("\nMajor Depressive Syndrome criteria is met!\n"
+                    + "\nIf there is no history of a manic episode; no evidence that a physical\n"
+                    + "disorder, medication, or other drug caused the depression; and no indication\n"
+                    + "that the depressiive symptoms were normal bereavement, then Major Depressive\n"
+                    + "Disorder diagnosis is present.\n");
+            }
+
+            int totalScore = (Item1 + Item2 + Item3 + Item4 + Item5 + Item6 + Item7 + Item8 + Item9);
 
             switch (totalScore)
             {
@@ -86,6 +114,11 @@ namespace Depression
                         break;
 
                     }
+            }
+
+            if (Item9 > 0)
+            {
+                Console.WriteLine("\nSuicide ideation is present, please assess the potential threat!\n");
             }
             DateTime now = DateTime.Now;
             Console.WriteLine(now);
