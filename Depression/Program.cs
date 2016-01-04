@@ -69,7 +69,7 @@ namespace Depression
                 case 3:
                 case 4:
                     {
-                        Console.WriteLine("The PHQ-9 severity score was " + totalScore + ".");
+                        Console.WriteLine("\nThe PHQ-9 severity score was " + totalScore + ".");
                         Console.WriteLine("\nNone to minimal depression. No further action recommended.");
                         break;
                     }
@@ -79,7 +79,7 @@ namespace Depression
                 case 8:
                 case 9:
                     {
-                        Console.WriteLine("The PHQ-9 severity score was " + totalScore + ".");
+                        Console.WriteLine("\nThe PHQ-9 severity score was " + totalScore + ".");
                         Console.WriteLine("\nMild depression. Watchful waiting; repeat PHQ-9 at follow-up is recommended.");
                         break;
                     }
@@ -89,7 +89,7 @@ namespace Depression
                 case 13:
                 case 14:
                     {
-                        Console.WriteLine("The PHQ-9 severity score was " + totalScore + ".");
+                        Console.WriteLine("\nThe PHQ-9 severity score was " + totalScore + ".");
                         Console.WriteLine("\nModerate depression. Treatment plan, considering counseling, follow-up and/or\n"
                             + "pharmacotherapy is recommended.");
                         break;
@@ -100,14 +100,14 @@ namespace Depression
                 case 18:
                 case 19:
                     {
-                        Console.WriteLine("The PHQ-9 severity score was " + totalScore + ".");
+                        Console.WriteLine("\nThe PHQ-9 severity score was " + totalScore + ".");
                         Console.WriteLine("\nModerately severe depression. Active treatment with pharmacotherapy and/or\n"
                             + "psychotherapy is recommended.");
                         break;
                     }
                 default:
                     {
-                        Console.WriteLine("The PHQ-9 severity score was " + totalScore + ".");
+                        Console.WriteLine("\nThe PHQ-9 severity score was " + totalScore + ".");
                         Console.WriteLine("\nSevere depression. Immediate initiation of pharmacotherapy and, if severe\n"
                             + "impairment or poor responser to therapy, expeditied referral to a mental health specialist\n"
                             + " for psychotherapy and/or collaborative management.");
